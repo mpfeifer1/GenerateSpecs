@@ -31,7 +31,7 @@ SCREEN=$(xdpyinfo  | grep dimensions | awk -F' ' '{print $2}')
 print_line "Screen Res =========>" $SCREEN
 
 #Print HDD Size
-HDD=$(lsblk | awk 'NR==2') #TODO
+HDD=$(lsblk | awk 'NR==2' | head -c 23 | tail -c 5) #TODO
 print_line "HDD Size ===========>" $HDD Gb
 
 print_line
