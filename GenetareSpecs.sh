@@ -15,27 +15,31 @@ print_line
 
 #Print OS
 KERNEL=$(uname -or)
-print_line "Linux Kernel =" $KERNEL
+print_line "Linux Kernel =======>" $KERNEL
 
 ARCH=$(uname -i)
-print_line "Linux Architecture =" $ARCH
+print_line "Linux Architecture =>" $ARCH
+
+print_line
 
 #Print RAM
 RAM=$(vmstat -s | head -n 1 |  awk -F' ' '{print $1}')
-print_line "Total Ram =" $RAM "Kb"
+print_line "Total Ram ==========>" $RAM "Kb"
 
 #Print Screen Resolution
 SCREEN=$(xdpyinfo  | grep dimensions | awk -F' ' '{print $2}')
-print_line "Screen Res =" $SCREEN
+print_line "Screen Res =========>" $SCREEN
 
 #Print HDD Size
-HDD=$(fdisk -l | grep Disk | awk -F ':' '{print $2}' | cut -d "," -f 1)
-print_line "HDD Size =" $HDD Gb
+HDD=$(lsblk | awk 'NR==2') #TODO
+print_line "HDD Size ===========>" $HDD Gb
+
+print_line
 
 #Print CPU Info
 CORES=$(cat /proc/cpuinfo | awk 'NR==13' | cut -d ":" -f 2)
-print_line "CPU Cores =" $CORES
+print_line "CPU Cores ==========>" $CORES
 MAKER=$(cat /proc/cpuinfo | awk 'NR==2' | cut -d ":" -f 2)
-print_line "CPU Manufacturer =" $MAKER
+print_line "CPU Manufacturer ===>" $MAKER
 CLOCK=$(cat /proc/cpuinfo | awk 'NR==5' | cut -d "@" -f 2)
-print_line "CPU Clock =" $CLOCK
+print_line "CPU Clock ==========>" $CLOCK
