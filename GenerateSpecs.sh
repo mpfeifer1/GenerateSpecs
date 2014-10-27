@@ -38,7 +38,7 @@ print_line "Linux Architecture =>" $ARCH
 print_line
 print_line "Total Ram ==========>" $RAM "Kb"
 print_line "Screen Res =========>" $SCREEN
-print_line "HDD Size ===========>" $HDD Gb
+print_line "HDD Size ===========>" $HDD "Gb"
 print_line
 print_line "CPU Manufacturer ===>" $MAKER
 print_line "CPU Model ==========>" $MODEL
