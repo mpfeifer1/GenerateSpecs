@@ -23,10 +23,10 @@ SCREEN=$(xdpyinfo  | grep dimensions | awk -F' ' '{print $2}')
 HDD=$(lsblk | awk 'NR==2' | head -c 23 | tail -c 5)
 
 #CPU Info
-CORES=$(cat /proc/cpuinfo | awk 'NR==13' | cut -d ":" -f 2)
 MAKER=$(cat /proc/cpuinfo | awk 'NR==2'  | cut -d ":" -f 2)
-CLOCK=$(cat /proc/cpuinfo | awk 'NR==5'  | cut -d "@" -f 2)
 MODEL=$(cat /proc/cpuinfo | awk 'NR==5'  | cut -d ":" -f 2 | head -c 37 | tail -c 8)
+CORES=$(cat /proc/cpuinfo | awk 'NR==13' | cut -d ":" -f 2)
+CLOCK=$(cat /proc/cpuinfo | awk 'NR==5'  | cut -d "@" -f 2)
 
 
 #Print Spec Sheet
