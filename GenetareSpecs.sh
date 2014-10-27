@@ -40,7 +40,7 @@ print_line "Total Ram ==========>" $RAM "Kb"
 print_line "Screen Res =========>" $SCREEN
 print_line "HDD Size ===========>" $HDD Gb
 print_line
-print_line "CPU Cores ==========>" $CORES
 print_line "CPU Manufacturer ===>" $MAKER
-print_line "CPU Clock ==========>" $CLOCK
 print_line "CPU Model ==========>" $MODEL
+print_line "CPU Cores ==========>" $CORES
+print_line "CPU Clock ==========>" $CLOCK
