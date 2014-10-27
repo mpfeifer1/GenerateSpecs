@@ -26,6 +26,7 @@ HDD=$(lsblk | awk 'NR==2' | head -c 23 | tail -c 5)
 CORES=$(cat /proc/cpuinfo | awk 'NR==13' | cut -d ":" -f 2)
 MAKER=$(cat /proc/cpuinfo | awk 'NR==2'  | cut -d ":" -f 2)
 CLOCK=$(cat /proc/cpuinfo | awk 'NR==5'  | cut -d "@" -f 2)
+MODEL=$(cat /proc/cpuinfo | awk 'NR==5'  | cut -d ":" -f 2)
 
 
 #Print Spec Sheet
@@ -42,3 +43,4 @@ print_line
 print_line "CPU Cores ==========>" $CORES
 print_line "CPU Manufacturer ===>" $MAKER
 print_line "CPU Clock ==========>" $CLOCK
+print_line "CPU Model ==========>" $MODEL
