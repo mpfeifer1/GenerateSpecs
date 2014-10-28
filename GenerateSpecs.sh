@@ -14,7 +14,7 @@ KERNEL=$(uname -or)
 ARCH=$(uname -i)
 
 #RAM
-RAM=$(vmstat -s | head -n 1 |  awk -F' ' '{print $1}')
+RAM=$(($(vmstat -s | awk 'NR==1' | head -c 13) / 1000000))
 
 #Screen Resolution
 SCREEN=$(xdpyinfo  | grep dimensions | awk -F' ' '{print $2}')
