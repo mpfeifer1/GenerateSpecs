@@ -14,7 +14,7 @@ KERNEL=$(uname -or)
 ARCH=$(uname -i)
 
 #RAM
-RAM=$(($(vmstat -s | awk 'NR==1' | head -c 13) / 1000000))
+RAM=$(($(vmstat -s | awk 'NR==1' | head -c 13) / 1000))
 
 #Screen Resolution
 SCREEN=$(xdpyinfo  | grep dimensions | awk -F' ' '{print $2}')
@@ -36,7 +36,7 @@ print_line
 print_line "Linux Kernel =======>" $KERNEL
 print_line "Linux Architecture =>" $ARCH
 print_line
-print_line "Total Ram ==========>" $RAM "Kb"
+print_line "Total Ram ==========>" $RAM "Mb"
 print_line "Screen Res =========>" $SCREEN
 print_line "HDD Size ===========>" $HDD "Gb"
 print_line
