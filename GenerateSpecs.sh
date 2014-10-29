@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Delete existing spec sheet, if any
-rm /home/$USER/Documents/Specs_$HOSTNAME.txt
+rm -f /home/$USER/Documents/Specs_$HOSTNAME.txt
 
 #Allows you to print to spec sheet easily
 function print_line()
