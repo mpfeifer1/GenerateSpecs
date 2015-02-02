@@ -6,17 +6,17 @@ function print_line() {
 echo $1 $2 $3>> /home/$USER/Documents/Specs_$HOSTNAME.txt
 }
 
-function first_word() {
+#function first_word() {
 
-}
+#}
 
-function after_symbol() {
+#function after_symbol() {
 
-}
+#}
 
-function line() {
+#function line() {
 
-}
+#}
 
 #OS
 KERNEL=$(uname -or)
